@@ -1,0 +1,10 @@
+= simple_form_for(@account) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :incoming_email
+    = f.input :outgoing_email
+    = f.input :crms
+
+  .form-actions
+    = f.button :submit

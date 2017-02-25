@@ -1,0 +1,11 @@
+= form_for(crm) do |f|
+  - if crm.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(crm.errors.count, "error")
+        prohibited this crm from being saved:
+      %ul
+        - crm.errors.full_messages.each do |message|
+          %li= message
+  .actions
+    = f.submit

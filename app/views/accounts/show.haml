@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%p
+  %b Incoming email:
+  = @account.incoming_email
+%p
+  %b Outgoing email:
+  = @account.outgoing_email
+%p
+  %b Crms:
+  = @account.crms
+
+= link_to 'Edit', edit_account_path(@account)
