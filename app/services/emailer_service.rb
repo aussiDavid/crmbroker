@@ -1,8 +1,10 @@
 class EmailerService
+
+  # extract all the lines from the body of the email
+  # and generate a hash of even number of columns 
+  # seperated by a ':'
+  # returns nil if there is an error or no pairs were found
   def self.perform email
-    # extract all the lines from the body of the email
-    # and generate a hash of even number of columns 
-    # seperated by a ':'
     result = ActionView::Base
       .full_sanitizer
       .sanitize(email.body)

@@ -7,7 +7,7 @@ RSpec.describe AccountMailer, type: :mailer do
     it "renders the headers" do
       expect(mail.subject).to eq("Forward")
       expect(mail.to).to eq(["to@example.org"])
-      expect(mail.from).to eq(["from@example.com"])
+      expect(mail.from).to eq(["noreply@mg.davidmilanese.com"])
     end
 
     it "renders the body" do

@@ -71,8 +71,7 @@ class AccountsController < ApplicationController
     def account_params
       params.require(:account)
         .permit(
-          :incoming_email, 
-          :outgoing_email
+          :email 
         )
     end
 end

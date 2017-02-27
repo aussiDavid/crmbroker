@@ -58,7 +58,7 @@ RSpec.describe AccountsController, type: :controller do
     context "with valid params" do
       let(:new_attributes) {
         {
-          incoming_email: 'fake@email.com'
+          email: 'fake505@email.com'
         }
       }
 
@@ -66,7 +66,7 @@ RSpec.describe AccountsController, type: :controller do
         account = create :account
         put :update, params: {id: account.to_param, account: new_attributes}, session: valid_session
         account.reload
-        expect( account.incoming_email ).to eq new_attributes[:incoming_email]
+        expect( account.email ).to eq new_attributes[:email]
       end
 
       it "assigns the requested account as @account" do
