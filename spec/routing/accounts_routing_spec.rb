@@ -12,11 +12,11 @@ RSpec.describe AccountsController, type: :routing do
     end
 
     it "routes to #show" do
-      expect(:get => "/accounts/1").to route_to("accounts#show", :id => "1")
+      expect(:get => "/account").to route_to("accounts#show")
     end
 
     it "routes to #edit" do
-      expect(:get => "/accounts/1/edit").to route_to("accounts#edit", :id => "1")
+      expect(:get => "/account/edit").to route_to("accounts#edit")
     end
 
     it "not routes to #create" do
@@ -24,15 +24,15 @@ RSpec.describe AccountsController, type: :routing do
     end
 
     it "routes to #update via PUT" do
-      expect(:put => "/accounts/1").to route_to("accounts#update", :id => "1")
+      expect(:put => "/account").to route_to("accounts#update")
     end
 
     it "routes to #update via PATCH" do
-      expect(:patch => "/accounts/1").to route_to("accounts#update", :id => "1")
+      expect(:patch => "/account").to route_to("accounts#update")
     end
 
     it "not routes to #destroy" do
-      expect(:delete => "/accounts/1").not_to route_to("accounts#destroy", :id => "1")
+      expect(:delete => "/account").not_to route_to("accounts#destroy")
     end
 
   end

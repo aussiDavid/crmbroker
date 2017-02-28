@@ -5,6 +5,7 @@
   = @account.email
 %p
   %b Crms:
-  = @account.crms
+  = @account.crms.map(&:name).join ', '
 
-= link_to 'Edit', edit_account_path(@account)
+= link_to 'Edit', edit_account_path
+= link_to 'Logout', destroy_account_session_path, :method => :delete

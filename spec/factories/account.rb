@@ -1,7 +1,10 @@
 FactoryGirl.define do
   factory :account do
-    email 'milanese.david@gmail.com'
-
+    email { Faker::Internet.email }
+    password "password"
+    password_confirmation "password"
+    confirmed_at Date.today
+    
     trait :with_crm do
       crms { build_list :crm, 1, :rest }
     end

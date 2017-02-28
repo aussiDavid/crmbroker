@@ -41,7 +41,8 @@ RSpec.describe AccountsController, type: :controller do
   describe "GET #show" do
     it "assigns the requested account as @account" do
       account = create :account
-      get :show, params: {id: account.to_param}, session: valid_session
+      sign_in account
+      get :show, session: valid_session
       expect(assigns(:account)).to eq(account)
     end
   end
@@ -49,7 +50,8 @@ RSpec.describe AccountsController, type: :controller do
   describe "GET #edit" do
     it "assigns the requested account as @account" do
       account = create :account
-      get :edit, params: {id: account.to_param}, session: valid_session
+      sign_in account
+      get :edit, session: valid_session
       expect(assigns(:account)).to eq(account)
     end
   end
@@ -64,20 +66,23 @@ RSpec.describe AccountsController, type: :controller do
 
       it "updates the requested account" do
         account = create :account
-        put :update, params: {id: account.to_param, account: new_attributes}, session: valid_session
+        sign_in account
+        put :update, params: {account: new_attributes}, session: valid_session
         account.reload
         expect( account.email ).to eq new_attributes[:email]
       end
 
       it "assigns the requested account as @account" do
         account = create :account
-        put :update, params: {id: account.to_param, account: valid_attributes}, session: valid_session
+        sign_in account
+        put :update, params: {account: valid_attributes}, session: valid_session
         expect(assigns(:account)).to eq(account)
       end
 
       it "redirects to the account" do
         account = create :account
-        put :update, params: {id: account.to_param, account: valid_attributes}, session: valid_session
+        sign_in account
+        put :update, params: {account: valid_attributes}, session: valid_session
         expect(response).to redirect_to(account)
       end
     end
@@ -85,7 +90,8 @@ RSpec.describe AccountsController, type: :controller do
     context "with invalid params" do
       it "assigns the account as @account" do
         account = create :account
-        put :update, params: {id: account.to_param, account: invalid_attributes}, session: valid_session
+        sign_in account
+        put :update, params: {account: invalid_attributes}, session: valid_session
         expect(assigns(:account)).to eq(account)
       end
     end

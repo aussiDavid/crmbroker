@@ -7,6 +7,6 @@ RSpec.describe "accounts/show", type: :view do
   end
 
   it "renders email" do
-    expect(rendered).to match(@account.email)
+    expect(rendered).to match @account.email
   end
 end

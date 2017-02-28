@@ -43,6 +43,8 @@ group :development, :test do
   gem 'rails-controller-testing'
 
   gem 'factory_girl'
+
+  gem 'faker'
 end
 
 group :development do
@@ -56,6 +58,7 @@ group :development do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'guard-bundler', require: false
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -69,3 +72,9 @@ gem 'griddler'
 gem 'griddler-mailgun'
 
 gem 'frontend-generators'
+
+gem 'devise'
+
+gem 'devise_account_expireable'
+
+gem 'any_login'

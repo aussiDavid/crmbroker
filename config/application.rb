@@ -25,6 +25,12 @@ module CRMthis
       :password       => '619474c08e769daa206b5e28bf90982f',
       :authentication => :plain
     }
+
+    # The app version number
+    config.x.version = '0.1'
+    
+    # The trial period in days
+    config.x.trial_period = 7
   end
 end
 

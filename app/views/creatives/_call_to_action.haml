@@ -2,4 +2,5 @@
   .container.text-center
     .call-to-action
       %h2 Create your account now!
-      %a.btn.btn-default.btn-xl.wow.tada{:href => "#"} Create Account!
+      %p Trail CRMThis free #{Rails.configuration.x.trial_period} for days
+      %a.btn.btn-default.btn-xl.wow.tada{:href => new_account_registration_path} Create Account!
