@@ -3,7 +3,13 @@
 
   .form-inputs
     = f.input :email
-    = f.input :crms
+
+    %label Crms
+    - active_crms.each do |crm|
+      .crm_btn.active
+        = crm.name
+        
+    .crm_btn Something else
 
   .form-actions
     = f.button :submit
