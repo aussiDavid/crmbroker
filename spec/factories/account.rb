@@ -9,6 +9,14 @@ FactoryGirl.define do
       crms { build_list :crm, 1, :rest }
     end
 
+    trait :with_rest_crm do
+      crms { build_list :crm, 1, :rest }
+    end
+
+    trait :with_hubspot_crm do
+      crms { build_list :crm, 1, :hubspot }
+    end
+
     trait :with_2_crms do
       crms { build_list :crm, 2, :sequence }
     end
