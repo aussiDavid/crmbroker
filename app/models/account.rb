@@ -7,7 +7,8 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :trackable, 
          :validatable, :confirmable, :account_expireable
 
-  has_many :crms
+  has_many :connections
+  has_many :crms, through: :connections 
 
   default :expires_at, Rails.configuration.x.trial_period.days.from_now
 end
