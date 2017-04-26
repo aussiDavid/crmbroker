@@ -29,7 +29,7 @@
   }
 ]
 .concat(
-  50.times.map{
+  7.times.map{
     {
       name: Faker::App.name
     }
